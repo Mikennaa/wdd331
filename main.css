@@ -2,7 +2,6 @@
 
 h1, h2 {
     font-family: 'Lora', serif;
-    text-decoration:none;
 }
 body {
     font-family: 'Helvetica', 'Arial', sans-serif;
@@ -25,7 +24,7 @@ nav {
 nav ul li a {
     color: #DEB887;
     text-decoration:none;
-    font-style: bold;
+    font-style:bold;
     list-style-type: none;
     padding:2rem;
 }

@@ -10,13 +10,21 @@ $active-color: #DEB887;
 $heading-font: 'Lora', serif;
 $basic-font: 'Helvetica', 'Arial', sans-serif;
 
-
-
+//mixin
+@mixin center ($max-width, $width: 85%) {
+  width: $width;
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+}
 h1, h2 {
     font-family: $heading-font;
 }
 body {
     font-family: $basic-font;
+    display: grid;
+    grid-template-columns: 0.25fr 0.75fr;
+}
 }
 header {
     background-color: $header-color;
@@ -52,6 +60,13 @@ main a {
     color:$header-color;
     text-decoration:none;
 }
+
+
+//nesting
+text: {
+  align:center;
+  size: 12px;
+}
 main a:active {
     color:$active-color;
 }
@@ -63,18 +78,21 @@ article {
     padding:10px;
     text-align:center;
     margin:3rem;
-    background-color:#FFFFFF;
 }
-article a:link {
+//nesting
+article {
+  background-color: #FFFFFF;
+  &:link {
     color: #000000;
     text-decoration:none;
-}
-article a:hover {
-    color: $header-color;
+  }
+  &:hover {
+    color:$header-color;
     text-decoration:underline;
-}
-article a:active {
-color: $active-color;
+  }
+  &:active {
+    color: $active-color:
+  }
 }
 .post-date {
     color:#BDBDBD;
@@ -88,19 +106,6 @@ color: $active-color;
 
 
 
-
-@media only screen and (min-width: 32.5em) {
-ul li a {
-    margin:0;
-    padding:0;
-    width:25%;
-    position:fixed;
-    height:100%;
-    overflow:auto;
-    color:#FAEBD7;
-}
-
-}
 
 
 
